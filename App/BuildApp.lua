@@ -17,6 +17,7 @@ project "App"
 
         -- Deps
         "../Dependencies/GLFW/include",
+        "../Dependencies/sokol/",
         "../BinaryDependencies/",
     }
 
@@ -27,7 +28,12 @@ project "App"
 
     links
     {
-        "GLFW",
+        "GLFW", "Sokol"
+    }
+
+    defines
+    {
+        "GLFW_INCLUDE_NONE"
     }
 
     targetdir ("../Binaries/")
@@ -53,9 +59,3 @@ project "App"
         runtime "Release"
         optimize "On"
         symbols "On"
-
-    filter "configurations:Dist"
-        defines { "DIST" }
-        runtime "Release"
-        optimize "On"
-        symbols "Off"

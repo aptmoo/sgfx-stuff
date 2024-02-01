@@ -5,6 +5,7 @@ workspace "LearningApp"
 
 group "Dependencies"
     include "Dependencies/BuildGLFW.lua"
+    include "Dependencies/BuildSokol.lua"
 group ""
 
 include "App/BuildApp.lua"
